@@ -69,9 +69,9 @@ function updateUserOrder(productId, action) {
     fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken,
-        },
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
+            },
         body: JSON.stringify({'productId': productId, 'action': action})
     })
     .then((response) => {
